@@ -32,6 +32,9 @@
                         {% if article.tags %}
                         <p>Tags: {% for tag in article.tags %}<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>, {% endfor %}</p>
                         {% endif %}
+                        {% if article.modified %}
+						<p>Last modified: {{ article.modified }}</p>
+						{% endif %}
                     </aside>
                     <hr/>
                     {% include "disqus.html" %}
