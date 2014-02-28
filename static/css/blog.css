@@ -103,6 +103,10 @@ body {
   font-style: italic;
   color: #38c5c5; }
 
+#post-share-links a {
+  font-style: italic;
+  color: #38c5c5; }
+
 .paginator {
   text-align: center;
   padding: 12px;
