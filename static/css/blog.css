@@ -122,6 +122,11 @@ a.dsq-brlink {
     .paginator a:hover {
       color: #38c5c5; }
 
+.svc-badge {
+  font-size: 36px;
+  width: 50px;
+  display: inline-block; }
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    Theses examples override the primary ('mobile first') styles.

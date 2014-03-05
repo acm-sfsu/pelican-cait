@@ -4,6 +4,7 @@
         <p id="site-desc">{% if SITESUBTITLE %} {{ SITESUBTITLE }} {% endif %}</p>
     </hgroup>
     <nav>
+        {% include "social.html" %}
         <ul id="nav-links">
             {% if USE_CUSTOM_MENU %}
             {% for name, url in CUSTOM_MENUITEMS %}

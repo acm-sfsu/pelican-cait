@@ -1,0 +1,5 @@
+<ul id="contact-methods">
+{% for title, url in SOCIAL %}
+    <a href="{{ url }}" target="{{title}}"><i class="icon-{{ title }} svc-badge"></i></a>
+{% endfor %}
+</ul>
