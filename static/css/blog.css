@@ -125,7 +125,14 @@ a.dsq-brlink {
 .svc-badge {
   font-size: 36px;
   width: 50px;
-  display: inline-block; }
+  display: inline-block;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+  .svc-badge:hover {
+    color: #38c5c5; }
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
