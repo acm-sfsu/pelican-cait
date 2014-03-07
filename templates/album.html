@@ -28,7 +28,7 @@
                         <!-- {% if article.gallery %} -->
                             <!-- <ul> -->
                             {% for image in article.galleryimages %}
-                            <!-- <li> --><a class="{{ article.album }} cboxElement" href="{{ SITEURL }}/{{ GALLERY_PATH }}/{{ article.album }}/{{ image }}"><img src="{{ SITEURL }}/{{ THUMBNAIL_DIR }}/{{ DEF_THUMB_SIZE_PATH }}/{{ image }}"></a><!-- </li> -->
+                            <!-- <li> --><a class="{{ article.album }} cboxElement" href="{{ SITEURL }}/{{ GALLERY_PATH }}/{{ article.album }}/{{ image }}"><img src="{{ SITEURL }}/{{ THUMBNAIL_DIR }}/{{ DEF_THUMB_SIZE_PATH }}{{ image }}"></a><!-- </li> -->
                             {% endfor %}
                             <!-- </ul> -->
                         <!-- {% endif %} -->
