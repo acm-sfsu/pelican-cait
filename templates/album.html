@@ -1,6 +1,54 @@
-<h2><a href="{{ SITEURL }}/pages/gallery.html#{{ article.album }}">{{ article.album }}</a></h2>
-    <ul>
-	{% for image in article.galleryimages %}
-	<li><a class="{{ article.album }} cboxElement" href="{{ SITEURL }}/{{ GALLERY_PATH }}/{{ article.album }}/{{ image }}"><img src="{{ SITEURL }}/{{ THUMBNAIL_DIR }}/{{ DEF_THUMB_SIZE_PATH }}/{{ image }}"></a></li>
-	{% endfor %}
-    </ul>
+{% extends "base.html" %}
+{% block title %}
+    {{ article.title|striptags}}
+{% endblock title %}
+
+{% block stylesheets %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/blog.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/github.css">
+{% endblock stylesheets %}
+
+{% block content %}
+    {% include "sidebar.html" %}
+    <div id="post-container">
+        <ol id="post-list">
+            <li>
+                <article class="post-entry">
+                    <header class="entry-header">
+                        <time class="post-time" datetime="{{ article.date.isoformat() }}" pubdate>
+                            {{ article.locale_date }}
+                        </time>
+                        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"><h1>{{ article.title }}</h1></a>
+                    </header>
+                    <section class="post-content">
+                        {{ article.content }}
+                        <!-- BREAK THIS BACK INTO AN INCLUDE -->
+                        <h2><a href="{{ SITEURL }}/pages/gallery.html#{{ article.album }}">{{ article.album }}</a></h2>
+                        <!-- {% if article.gallery %} -->
+                            <!-- <ul> -->
+                            {% for image in article.galleryimages %}
+                            <!-- <li> --><a class="{{ article.album }} cboxElement" href="{{ SITEURL }}/{{ GALLERY_PATH }}/{{ article.album }}/{{ image }}"><img src="{{ SITEURL }}/{{ THUMBNAIL_DIR }}/{{ DEF_THUMB_SIZE_PATH }}/{{ image }}"></a><!-- </li> -->
+                            {% endfor %}
+                            <!-- </ul> -->
+                        <!-- {% endif %} -->
+                        <!-- END OF ALBUM.HTML INCLUDE -->
+                    </section>
+                    <hr/>
+                    <aside class="post-meta">
+                        <p>Category: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></p>
+                        {% if article.tags %}
+                        <p>Tags: {% for tag in article.tags %}<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>, {% endfor %}</p>
+                        {% endif %}
+                        {% if article.modified %}
+						<p>Last modified: {{ article.modified }}</p>
+						{% endif %}
+                    </aside>
+                    <hr/>
+                    {% include "share.html" %}
+                    {% include "disqus.html" %}
+                </article>
+            </li>
+        </ol>
+    </div>
+{% endblock content %}
