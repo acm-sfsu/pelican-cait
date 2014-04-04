@@ -55,6 +55,9 @@
         <link rel="icon" type="image/png" href="{{SITEURL}}/{{FAVICON}}">
         {% endif %}
         <script src="{{ SITEURL }}/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+        {% if EXTRA_HEADER %}
+            {{ EXTRA_HEADER }}
+        {% endif %}
     </head>
     <body>
         <!--[if lt IE 7]>
